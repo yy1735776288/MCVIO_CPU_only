@@ -9,15 +9,15 @@
 #     LIDAR,
 #     UNKNOWN
 # };
-imu_topic: "/imu/data_raw"
+imu_topic: "/imu_data_raw"
 
-sensor_list: ['cam_0','cam_1']
+sensor_list: ['cam0','cam1']
 
 cam_0:
   sensor_type: 0
-  left_image_topic: "/ros_frame/camera_0"
-  frame_id: "cam_0"
-  camera_config_file: "//home/nuc/Tlab/catkin_ws/src/MCVIO/MCVIO/config/MCVIO/cam360/cam_0.yaml"
+  left_image_topic: "/fisheye/left/image_raw"
+  frame_id: "cam0"
+  camera_config_file: "/home/yy/mono_ws/src/MCVIO_CPU_only/MCVIO/config/MCVIO/cam360/cam_0.yaml"
   extrinsicRotation_imu_camera: !!opencv-matrix
     rows: 3
     cols: 3
@@ -39,9 +39,9 @@ cam_0:
   show_track: 1           # publish tracking image as topic
   equalize: 1             # if image is too dark or light, trun on equalize to find enough features
   fisheye: 1             # if using fisheye, trun on it. A circle mask will be loaded to remove edge noisy points
-  fisheye_path: "/home/nuc/Tlab/catkin_ws/src/MCVIO/MCVIO/config/MCVIO/fisheye_mask.jpg"
-  image_width: 816
-  image_height: 686
+  fisheye_path: "/home/yy/mono_ws/src/MCVIO_CPU_only/MCVIO/config/MCVIO/fisheye_mask.jpg"
+  image_width: 1088
+  image_height: 1280
   mirror_parameters:
     xi: 1.9370645285718184
   distortion_parameters:
@@ -57,9 +57,9 @@ cam_0:
 
 cam_1:
   sensor_type: 0
-  left_image_topic: "/ros_frame/camera_1"
-  frame_id: "cam_1"
-  camera_config_file: "/home/nuc/Tlab/catkin_ws/src/MCVIO/MCVIO/config/MCVIO/cam360/cam_1.yaml"
+  left_image_topic: "/fisheye/right/image_raw"
+  frame_id: "cam1"
+  camera_config_file: "/home/yy/mono_ws/src/MCVIO_CPU_only/MCVIO/config/MCVIO/cam360/cam_1.yaml"
   extrinsicRotation_imu_camera: !!opencv-matrix
     rows: 3
     cols: 3
@@ -81,9 +81,9 @@ cam_1:
   show_track: 1           # publish tracking image as topic
   equalize: 1             # if image is too dark or light, trun on equalize to find enough features
   fisheye: 1             # if using fisheye, trun on it. A circle mask will be loaded to remove edge noisy points
-  fisheye_path: "/home/nuc/Tlab/catkin_ws/src/MCVIO/MCVIO/config/MCVIO/fisheye_mask.jpg"
-  image_width: 816
-  image_height: 686
+  fisheye_path: "/home/yy/mono_ws/src/MCVIO_CPU_only/MCVIO/config/MCVIO/fisheye_mask.jpg"
+  image_width: 1088
+  image_height: 1280
   mirror_parameters:
     xi: 1.8075725317445792
   distortion_parameters:
